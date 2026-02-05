@@ -8,10 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Iconify -->
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="static/assets/js/iconify-icon.min.js"></script>
 
-    <link rel="icon" type="image/svg+xml" href="static/assets/icon.svg">
-
+    <link rel="icon" type="image/png" href="/static/assets/favicon.png">
 
     <!-- Fonts: Plus Jakarta Sans (Matches the Linear/Vercel aesthetic) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,6 +85,28 @@
     </style>
 </head>
 <body class="bg-white text-neutral-900 selection:bg-neutral-900 selection:text-white">
+    
+    <div id="side-menu" class="bg-gray-50 md:hidden lg:hidden top-0 right-0 z-[100] fixed w-full h-full transition-transform translate-x-full duration-300 ease-in-out transform">
+      <div class="flex flex-col p-6 h-full justify-between">
+        <div class="flex justify-between items-center mb-8 transition-all duration-300 ease-in-out">
+          <a href="#" class="z-50 flex items-center gap-2 group">
+                <div class="w-8 h-8 text-white flex items-center justify-center rounded-lg">
+                    <img src="static/assets/favicon.png" alt="" width="40" stroke-width="1.5">
+                </div>
+                <span class="font-semibold text-lg tracking-tight text-neutral-900">Bluedove</span>
+            </a>
+          <button onclick="document.getElementById('side-menu').classList.toggle('translate-x-full')" class="w-8 h-8">
+            <span class="block w-5 h-px bg-black"></span>
+            <span class="block w-5 h-px bg-black"></span>
+          </button>
+        </div>
+        <ul class="flex flex-col mb-40 font-medium text-lg">
+          <li><a href="#about" class="text-3xl flex py-2 h-36 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center" onclick="document.getElementById('side-menu').classList.add('translate-x-full')">About</a></li>
+          <li><a href="#experience" class="text-3xl flex py-2 h-36 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center" onclick="document.getElementById('side-menu').classList.add('translate-x-full')">Experience</a></li>
+          <li><a href="#contact" class="text-3xl flex py-2 h-36 items-center font-bold hover:bg-gray-300 dark:hover:bg-gray-700 justify-center" onclick="document.getElementById('side-menu').classList.add('translate-x-full')">Contact</a></li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent" id="navbar">
@@ -94,7 +115,7 @@
             <!-- Logo -->
             <a href="#" class="z-50 flex items-center gap-2 group">
                 <div class="w-8 h-8 text-white flex items-center justify-center rounded-lg">
-                    <img src="static/assets/icon.svg" alt="" width="18" stroke-width="1.5">
+                    <img src="static/assets/favicon.png" alt="" width="40" stroke-width="1.5">
                     <!-- <iconify-icon icon="solar:leaf-linear" width="18" stroke-width="1.5"></iconify-icon> -->
                 </div>
                 <span class="font-semibold text-lg tracking-tight text-neutral-900">Bluedove</span>
@@ -102,10 +123,10 @@
 
             <!-- Desktop Menu -->
             <nav class="hidden md:flex items-center gap-8">
-                <a href="#about" class="text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors">About</a>
-                <a href="#why-us" class="text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors">Why Us</a>
-                <a href="#products" class="text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors">Products</a>
-                <a href="#experience" class="text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors">Experience</a>
+                <a href="#about" class="text-sm font-medium text-blue hover:text-black-900 transition-colors">About</a>
+                <a href="#why-us" class="text-sm font-medium text-blue hover:text-black-900 transition-colors">Why Us</a>
+                <a href="#products" class="text-sm font-medium text-blue hover:text-black-900 transition-colors">Products</a>
+                <a href="#experience" class="text-sm font-medium text-blue hover:text-black-900 transition-colors">Experience</a>
             </nav>
 
             <!-- CTA & Mobile Toggle -->
@@ -113,9 +134,9 @@
                 <a href="#contact" class="hidden md:inline-flex h-9 items-center justify-center rounded-full border border-neutral-200 bg-white px-4 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-50 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2">
                     Contact Us
                 </a>
-                <button class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
-                    <span class="block w-5 h-px bg-neutral-900"></span>
-                    <span class="block w-5 h-px bg-neutral-900"></span>
+                <button class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" onclick="document.getElementById('side-menu').classList.toggle('translate-x-full')">
+                    <span class="block w-5 h-px bg-black"></span>
+                    <span class="block w-5 h-px bg-black"></span>
                 </button>
             </div>
         </div>
@@ -155,7 +176,7 @@
         </div>
         
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <div class="absolute bottom-10 animate-bounce">
             <iconify-icon icon="solar:arrow-down-linear" width="24" class="text-white"></iconify-icon>
         </div>
     </section>
@@ -350,7 +371,7 @@
                 <!-- Card 4 -->
                 <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-sm hover:shadow-md transition-all reveal-on-scroll delay-300">
                     <div class="text-neutral-900 mb-4">
-                        <iconify-icon icon="solar:blackboard-point-linear" width="32" stroke-width="1"></iconify-icon>
+                        <iconify-icon icon="solar:document-add-linear" width="32" stroke-width="1"></iconify-icon>
                     </div>
                     <h4 class="text-base font-semibold text-neutral-900 mb-2">Training Programs</h4>
                     <p class="text-xs text-neutral-500 leading-relaxed">Capacity building workshops for modern agricultural practices.</p>
@@ -393,7 +414,7 @@
             <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
                 <div class="max-w-sm">
                     <div class="flex items-center gap-2 mb-6 text-white">
-                        <iconify-icon icon="solar:leaf-linear" width="24"></iconify-icon>
+                        <img src="static/assets/favicon.png" width="32" alt="">
                         <span class="font-semibold text-xl tracking-tight">Bluedove</span>
                     </div>
                     <p class="text-neutral-400 text-sm leading-relaxed">
