@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "tailwind-build": "npx @tailwindcss/cli -i ./assets/input.css -o ./dist/output.css",
+    "tailwind-build:watch": "npx @tailwindcss/cli -i ./assets/input.css -o ./dist/output.css",
+    "build": "vite build --mode development",
+    "build:watch": "npm run tailwind-build:watch && vite build --watch",
+    "build:prod": "npm run tailwind-build && vite build --mode production",
+    "dev": "vite"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}
